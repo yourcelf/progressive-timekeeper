@@ -15,6 +15,7 @@ formatTime = (now) ->
     return time
 
 class Category extends Backbone.Model
+  localStorage: new Store("progressive-timekeeper")
   toggleActive: =>
     if @get("active") then @stop() else @start()
 
@@ -135,9 +136,11 @@ class Settings extends Backbone.View
       @cats.shift()
     for view in @editViews
       view.save()
-      if view.model.get("category")
+      if view.model.get("category") != ""
         @cats.add view.model
         view.model.save()
+      else
+        view.model.destroy()
     app.navigate "", trigger: true
     return false
 
