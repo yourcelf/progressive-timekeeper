@@ -292,7 +292,13 @@ class Export extends Backbone.View
     @cats = categoryList
 
   render: =>
-    $(@el).html @template exportJSON: JSON.stringify(@cats)
+    data = []
+    for cat in @cats.models
+      data.push
+        category: cat.get "category"
+        elapsed: cat.get "elapsed"
+        series: cat.get "series"
+    $(@el).html @template exportJSON: JSON.stringify(data)
     this
 
   back: =>
