@@ -1,7 +1,7 @@
 Progressive Timekeeper
 ======================
 
-This is a simple application with which one can do "progressive timekeeping" –
+This is a simple application for "progressive timekeeping" –
 keeping track of speaking time by categories of identity (e.g. sex, gender,
 racial identity, power position, etc). It can be used to help people think
 about whether or not speaking time in their organization's meetings are in fact
