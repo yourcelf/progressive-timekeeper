@@ -182,7 +182,7 @@ class TimeKeeper extends Backbone.View
     date = new Date(min)
     if found
       $(".meeting-start", @el).html(
-        "Meeting start: #{MONTHS[date.getMonth()]} #{date.getDate()}, #{formatTime(date)}"
+        "Start: #{MONTHS[date.getMonth()]} #{date.getDate()}, #{formatTime(date)}"
       )
     else
       $(".meeting-start", @el).html("&nbsp;")
