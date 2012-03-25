@@ -1,0 +1,50 @@
+// Mixins
+@import "normalize.css"
+@import "buttons.css"
+
+background-rgba(r, g, b, a)
+  // rgba with fallback to rgb
+  background-color: rgb(r, g, b)
+  background-color: rgba(r, g, b, a)
+
+// Main
+body
+  background: url("/img/bgnoise_lg.png")
+
+a:link, a:visited
+  color: #90f
+a:link.cta, a:visited.cta
+  color: white
+
+#main
+  padding: 1em
+  .clock
+    font-size: 48px
+    text-align: center
+  .buttonrow
+    width: 50%
+    float: left
+  .elapsed
+    font-size: 24px
+  .meeting-start
+    text-align: center
+  .graph 
+    .labels, .lines
+      text-align: right
+      float: left
+  .about
+    max-width: 33em
+    margin-left: auto
+    margin-right: auto
+  a.activate
+    width: 83%
+    text-align: center
+  input[name=category]
+    width: 150px
+  input[name=elapsed]
+    width: 50px
+
+#footer
+  margin-top: 1em
+  clear: both
+  text-align: center
