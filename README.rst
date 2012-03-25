@@ -13,6 +13,8 @@ again when they finish. Multiple categories can be activated at once. This app
 can run on a phone or laptop, and could be part of the role of a timekeeper,
 alongside facilitators or stack keepers.
 
+Inspired by this `visualization by numeroteca <http://numeroteca.org/2012/01/11/interventions-occupyboston-ga-jan-10th-2012/`_.
+
 Please send feedback, suggestions, or ideas to cfd@media.mit.edu or @cdetar. 
 
 Running server
