@@ -99,15 +99,12 @@ class CategoryEdit extends Backbone.View
   render: =>
     $(@el).html @template
       category: @model.get "category"
-      elapsed: Math.round((@model.get("elapsed") or 0) / 1000)
     this
 
   save: =>
     cat = $("input[name=category]", @el).val()
-    elapsed = parseInt($("input[name=elapsed]", @el).val() or 0) * 1000
     @model.set
       category: $("input[name=category]", @el).val()
-      elapsed: elapsed
     return false
 
 class Settings extends Backbone.View
