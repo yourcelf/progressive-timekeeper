@@ -33,6 +33,16 @@ The server is now running on localhost on port 8000.  Or specify the port:
 
     $ cake --port 8001 runserver
 
+Currently, it's deployed on Node for convenience of asset compilation; it's
+essentially a static app.  The main business for this app lives in the
+following files:
+
+    lib/server.coffee           <-- ultra-simple node server for compilation
+    assets/js/frontend.coffee   <-- backbone.js based user interface
+    views/index.jade            <-- templates
+    assets/css/style.stylus     <-- styles
+
+
 License
 -------
 
