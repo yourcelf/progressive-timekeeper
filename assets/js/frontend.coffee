@@ -42,6 +42,7 @@ class Category extends Backbone.Model
 
   _updateElapsed: =>
     @set elapsed: @lastElapsed + (new Date().getTime() - @lastStart)
+    @trigger "elapsedChange"
     @save()
 
 class CategoryList extends Backbone.Collection
@@ -66,28 +67,31 @@ class ClockView extends Backbone.View
 class CategoryView extends Backbone.View
   template: _.template $("#showCategory").html()
   events:
-    'click a.activate': 'toggleActive'
+    'mousedown a.activate': 'toggleActive'
+    'touchstart a.activate': 'toggleActive'
 
   initialize: (model) ->
     @model = model
-    @model.on 'change', @render
+    @model.on 'elapsedChange', =>
+      $(".elapsed", @el).html @_formatElapsed()
 
   toggleActive: (event) ->
+    $(".activate", @el).toggleClass("cta-red cta-green")
     @model.toggleActive()
-    @render()
     return false
 
-  render: =>
+  _formatElapsed: =>
     elapsed = @model.get('elapsed') or 0
     seconds = Math.round(elapsed / 1000) % 60
     seconds = if seconds < 10 then "0" + seconds else seconds
     minutes = Math.floor(elapsed / 1000 / 60)
+    return "#{minutes}:#{seconds}"
 
+  render: =>
     $(@el).addClass "buttonrow"
     $(@el).html @template
       category: @model.get('category')
-      seconds: seconds
-      minutes: minutes
+      elapsed: @_formatElapsed()
       active: @model.get('active')
     this
 
@@ -197,6 +201,7 @@ class TimeKeeper extends Backbone.View
         cat.save
           elapsed: 0
           series: []
+        cat.trigger "elapsedChange"
     return false
 
   graph: (event) ->

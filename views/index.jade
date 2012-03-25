@@ -13,7 +13,7 @@ html(lang="en")
       | <input type='text' name='category' value='<%= category %>' />
 
     script(type='text/template', id='showCategory')
-      | <a href='#' class='activate cta <%= active ? "cta-red": "cta-green" %>'><%= category %>: <span class='elapsed'><%= minutes %>:<%= seconds %></span></a>
+      | <a href='#' class='activate cta <%= active ? "cta-red": "cta-green" %>'><span class='category'><%= category %></span>: <span class='elapsed'><%= elapsed %></span></a>
 
     script(type='text/template', id='settings')
       | <h2>Categories:</h2>
