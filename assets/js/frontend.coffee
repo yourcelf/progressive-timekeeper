@@ -67,13 +67,24 @@ class ClockView extends Backbone.View
 class CategoryView extends Backbone.View
   template: _.template $("#showCategory").html()
   events:
-    'mousedown a.activate': 'toggleActive'
-    'touchstart a.activate': 'toggleActive'
+    'mousedown a.activate': 'mouseToggleActive'
+    'touchstart a.activate': 'touchToggleActive'
 
   initialize: (model) ->
     @model = model
     @model.on 'elapsedChange', =>
       $(".elapsed", @el).html @_formatElapsed()
+
+  mouseToggleActive: (event) ->
+    unless @isTouchEnabled
+      # Avoid double-calls from touch/mouse events.
+      @toggleActive()
+    return false
+
+  touchToggleActive: (event) =>
+    @isTouchEnabled = true
+    @toggleActive()
+    return false
 
   toggleActive: (event) ->
     $(".activate", @el).toggleClass("cta-red cta-green")

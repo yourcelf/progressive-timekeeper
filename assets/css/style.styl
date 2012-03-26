@@ -60,12 +60,19 @@ a:link.cta, a:visited.cta
 // Mobile first
 //
 #main
+  position: relative
   min-width: 320px
   margin-left: auto
   margin-right: auto
   padding: 0em
+  .buttonrow
+    width: 50%
+    float: left
   a.activate
-    width: 238px
+    height: 80px
+    line-height: 30px
+    .elapsed
+      display: block
 .clock
   display: none
 .cta
@@ -94,12 +101,5 @@ a:link.cta, a:visited.cta
       font-size: 16px
       margin-left: 0px
       margin-right: 0px
-  .cta
-    height: 50px
-    line-height: 50px
-  .buttonrow
-    width: 50%
-    float: left
-    text-align: center
   .clock
     display: block
