@@ -3,4 +3,5 @@ node_modules
 *.swp
 *.pyc
 server.log
-fabfile.py
+_build
+builtAssets

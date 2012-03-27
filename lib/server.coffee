@@ -18,7 +18,7 @@ start = (options={port: 8000, host: 'localhost'}) ->
   #
   # Views
   #
-  app.get /\/.*/, (req, res) -> res.render 'index', title: "Progressive Clock"
+  app.get '/', (req, res) -> res.render 'index', title: "Progressive Clock"
 
   #
   # Go!
