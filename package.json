@@ -1,0 +1,32 @@
+{
+  "name": "progtime",
+  "version": "0.0.0",
+  "description": "Progressive Timekeeper. Keep track of speaking time by identity category.",
+  "main": "index.js",
+  "dependencies": {
+    "jade": "~0.22.0",
+    "connect-assets": "~2.1.9",
+    "stylus": "~0.24.0",
+    "connect": "~2.0.3",
+    "express": "~2.5.8",
+    "snockets": "~1.3.4"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.4",
+    "express": "~2",
+    "connect-assets": "*",
+    "jade": "*",
+    "stylus": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yourcelf/progressive-timekeeper.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.rst",
+  "gitHead": "657ebde52837e135e528539b228e0e7df7e5bca9"
+}
