@@ -28,10 +28,9 @@ Installation of server
 This app runs on Node v0.6.x, and is written primarily in coffeescript.
 
 Clone the repository locally.  In the repository directory, install node
-dependencies listed in `requirements.txt`.  You can do this manually, or with a
-little command-line-fu::
+dependencies::
 
-    $ for line in `cat requirements.txt` ; do npm install "$line" ; done
+    $ npm install
 
 Make sure coffee-script is installed globally, so we get access to the `cake`
 command::
@@ -54,6 +53,18 @@ following files::
     assets/js/frontend.coffee   <-- backbone.js based user interface
     views/index.jade            <-- templates
     assets/css/style.stylus     <-- styles
+
+Deploying as a static app
+-------------------------
+
+Install `fabric <http://docs.fabfile.org/en/1.6/>`_, and then deploy as a
+static app to a remote server with one command::
+
+    $ fab deploy:dest='/path/to/remote/dir' -H example.com --user=username
+
+This will build everything as static files, then rsync them to::
+
+    username@example.com/path/to/remote/dir
 
 
 License
