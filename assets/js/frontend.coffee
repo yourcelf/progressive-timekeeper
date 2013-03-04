@@ -125,7 +125,7 @@ class CategoryEdit extends Backbone.View
 
 class Settings extends Backbone.View
   template: _.template $("#settings").html()
-  max_entries: 8
+  max_entries: 12
   events:
     'click a.save': 'save'
     'click .cancel': 'cancel'
